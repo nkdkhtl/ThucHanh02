@@ -14,6 +14,12 @@ namespace Lab02.Controllers
             return View(books);
         }
 
+
+        public PartialViewResult PopularBook()
+        {
+            var books = book.GetBookList();
+            return PartialView(books);
+        }
         public IActionResult Create()
         {
             ViewBag.authors = book.Authors;
